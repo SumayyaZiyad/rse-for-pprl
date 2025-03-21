@@ -288,7 +288,7 @@ if __name__ == '__main__':
     print("Number of 1-bits to set is %d" % num_1_bits)
 
     print("======= Encoding dataset a =======")
-    processed_records_1, zero_f_qs_r_1 = extract_signatures(reference_q_gram_sets, record_store1, num_1_bits)
+    encoded_db1 = extract_signatures(reference_q_gram_sets, record_store1, num_1_bits)
 
     print("======= Encoding dataset b =======")
-    processed_records_2, zero_f_qs_r_2 = extract_signatures(reference_q_gram_sets, record_store2, num_1_bits)
+    encoded_db2 = extract_signatures(reference_q_gram_sets, record_store2, num_1_bits)
