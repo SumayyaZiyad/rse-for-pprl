@@ -156,7 +156,7 @@ def weigh_random_sets(random_sets, q_gram_freq):
     return weighed_random_sets
 
 
-class RandomQgramSetGenerator:
+class RefSetProcessor:
     def __init__(self, init_random_set_file, q_gram_freq_file, do_swap, seed):
         self.seed = seed
         self.init_random_set_file = init_random_set_file
@@ -165,7 +165,7 @@ class RandomQgramSetGenerator:
         self.do_swapping = do_swap
         self.freq_q_gram_file = q_gram_freq_file
 
-    def generate_random_q_gram_sets(self):
+    def process_ref_q_gram_sets(self):
         start_weighing_r = time.time()
         weighed_random_sets = weigh_random_sets(self.init_random_sets, self.frequent_q_grams)
         assert len(self.init_random_sets) == len(weighed_random_sets)

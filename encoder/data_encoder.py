@@ -272,10 +272,10 @@ if __name__ == '__main__':
     min_q_gram_length, avg_q_gram_length = calculate_average_len(db1_qs + db2_qs)
     print("Average length of the database q-gram sets is: %d" % avg_q_gram_length)
 
-    RANDOM_GENERATOR = ref_set_processor.RandomQgramSetGenerator(init_ref_set_file, q_gram_frequency_file,
-                                                                      must_swap, seed)
+    RANDOM_GENERATOR = ref_set_processor.RefSetProcessor(init_ref_set_file, q_gram_frequency_file,
+                                                         must_swap, seed)
 
-    reference_q_gram_sets = RANDOM_GENERATOR.generate_random_q_gram_sets()
+    reference_q_gram_sets = RANDOM_GENERATOR.process_ref_q_gram_sets()
     print("Generated %d reference q-gram sets" % len(reference_q_gram_sets))
 
     signature_gen_start = time.time()
