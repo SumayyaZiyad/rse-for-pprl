@@ -21,7 +21,7 @@ import time
 
 import bitarray
 
-import random_qgram_generator
+import ref_set_processor
 
 Q_GRAM_ATTR = "record_q_gram"
 SIGNATURE_ATTR = "signature"
@@ -272,7 +272,7 @@ if __name__ == '__main__':
     min_q_gram_length, avg_q_gram_length = calculate_average_len(db1_qs + db2_qs)
     print("Average length of the database q-gram sets is: %d" % avg_q_gram_length)
 
-    RANDOM_GENERATOR = random_qgram_generator.RandomQgramSetGenerator(init_ref_set_file, q_gram_frequency_file,
+    RANDOM_GENERATOR = ref_set_processor.RandomQgramSetGenerator(init_ref_set_file, q_gram_frequency_file,
                                                                       must_swap, seed)
 
     reference_q_gram_sets = RANDOM_GENERATOR.generate_random_q_gram_sets()
